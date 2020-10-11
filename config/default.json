@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://Jequex:jequexPassword@contact-keeper.wiswp.mongodb.net/contact-keeper?retryWrites=true&w=majority",
+    "jwtSecret": "jequexSecret"
+}
