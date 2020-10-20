@@ -18,7 +18,7 @@ const Contacts = () => {
     }
 
     return (
-        <div style={{ overflow: 'scroll', maxHeight: '600px' }}>
+        <div style={{ overflow: 'scroll', maxHeight: '500px' }}>
             {contacts !== null && !loading ? (filtered !== null ?
                 filtered.map(contact => (<ContactItem contact={contact} key={contact._id} />)) :
                 contacts.map(contact => (<ContactItem contact={contact} key={contact._id} />))
