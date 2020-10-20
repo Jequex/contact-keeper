@@ -24,7 +24,8 @@ router.get('/', auth, async (req, res)=>{
 //@desc add new contact
 //@access Private
 router.post('/',[auth, [
-    check('name', 'name is required').not().isEmpty()
+    check('name', 'name is required').not().isEmpty(),
+    check('email', 'Please enter a valid email').isEmail()
 ]], async (req, res)=>{
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -105,7 +106,7 @@ router.delete('/:id', auth, async (req, res)=>{
         }
 
         //check if user owns the contact
-        if(contact.user !== req.user.id){
+        if(contact.user.toString() !== req.user.id){
             return res.status(401).json({msg:"not authorized"})
         }
 
